@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb://admin:secret@localhost:27017/NodeBE") //connect to MongoDB database
+        await mongoose.connect("mongodb://admin:secret@192.168.31.230:27017/NodeBE") //connect to MongoDB database
         console.log("MongoDB connected successfully")
     } catch (err) {
 
-        console.log(err.message);
+        console.log("MongoDB not connected ",err.message);
     }
 }
 

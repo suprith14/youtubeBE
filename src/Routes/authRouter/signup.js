@@ -20,6 +20,10 @@ authrouter.post('/signup', async (req, res) => { //create a new route for signup
         age: req.body.age, //get age from request body
         password: hashedPassword //get password from request body
     })
+    console.log("first name "+fisrtName);
+    console.log("lastName "+lastName);
+    console.log(" email "+email);
+    console.log("password "+password);
 
 
     user.save().then(() => {

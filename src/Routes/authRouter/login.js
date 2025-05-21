@@ -10,10 +10,14 @@ const User = require('../../models/user'); //import user model to use in the app
 loginrouter.get('/login', async (req, res) => { //create a new route for login
 
 
-    console.log("login  called")
+    
     const { email, password } = req.query; //get email and password from request body
     const user = await User.findOne({ email: email }); //find user by email in the database
+    console.log("login  called")
     console.log("user", JSON.stringify(user))
+    console.log("User: fron fe", user);
+    console.log("Password from DB:", user?.password);
+    console.log("Password from input:", password);
 
 
     if (user.length === 0) { //if user not found
